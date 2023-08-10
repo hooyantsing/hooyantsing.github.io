@@ -21,7 +21,7 @@
     <meta name="description" content="">
     <meta property="og:type" content="website">
 <meta property="og:title" content="hooyantsing&#39;s Blog">
-<meta property="og:url" content="https://hooyantsing.github.io/categories/%E6%8A%80%E6%9C%AF%E5%90%91/">
+<meta property="og:url" content="https://hooyantsing.github.io/tags/IO/">
 <meta property="og:site_name" content="hooyantsing&#39;s Blog">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="hooy">
@@ -430,157 +430,34 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/0x0008-%E7%94%B1%E7%A1%AC%E7%9B%98%E6%8E%89%E7%9B%98%E5%BC%95%E5%8F%91%E7%9A%84Win10%E8%93%9D%E5%B1%8F%E6%95%85%E9%9A%9C/">
+            <a class="abstract-title" href="/0x000B-BIO%E3%80%81NIO%E3%80%81AIO%E5%8C%BA%E5%88%AB%E7%9A%84%E5%8C%BA%E5%88%AB/">
                 
-                <span class="abstract-title-text">0x0008-由硬盘掉盘引起的Win10蓝屏故障</span>
+                <span class="abstract-title-text">0x000B-BIO、NIO、AIO区别的区别</span>
             </a>
             <div class="abstract-content">
-                结论先说结论，如果你的电脑出现以下症状：
-
-开机一分钟左右硬盘占用率100%，鼠标拖动缓慢甚至无法移动。
-Win10蓝屏，并且恢复进度始终为零，只能强制重启电脑。包括但不限于以下蓝屏代码：
-critical process died
-system service expection
-critical service failed
+                标准回答
+同步阻塞BIO：服务器实现模式为 一个连接一个线程，即客户端有连接请求时服务器就需要启动一个线程进行处理。如果这个连接不做任何事情会造成不必要的线程开销，可以通过线程池机制来改善；
+同步非阻塞NIO：服务器实现模式为 一个请求一个线程，即客户端发送的连接请求都会注册到多路复用器上，多路复用器 轮询 到某个连接上有IO请求时才启动一个线程进行处理。
+异步非阻塞AIO（NIO2）：服务器实现模式为 一个有效请求一个线程，即客户端的IO请求都是由操作系统先处理，再 通知 服务器启动线程进行处理。
 
 
-
-解决方案很可能是由硬盘掉盘引起的故障，有以下两种方案可选：
-
-将硬盘拆下，使用酒精擦拭硬盘“金手指”，然后装回去（可以考虑换一个插槽）。
-直接更换硬盘。
-
-我的经历最近一段时间，我的笔记本蓝屏是越来越频繁，令人恼火。根据蓝屏代码查询相关资料，也没一个靠谱的...
+问题详解名词解释
+同步：Java 自己处理 IO 读写；
+异步：Java 将 IO ...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/08/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/06/05</span>
+                <div class="abstract-date" title="Last updated: 2023/08/10">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/08/10</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="Windows10">Windows10</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/0x0006-AndroidTV%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%9E%E6%88%98/">
-                
-                <span class="abstract-title-text">0x0006-AndroidTV树莓派实战</span>
-            </a>
-            <div class="abstract-content">
-                - 注意！本博文前提路由器全局科学上网，路由器全局科学上网，路由器全局科学上网 -
-前言家里之前一直使用的是歌华有线数字电视，随着互联网的快速发展，网络电视盒子进入千家万户。歌华有线作为传统的电视服务，逐渐不能满足人们对文娱节目日益提高的需求。因此，父母也提议将机顶盒换置为网络电视盒子。在这里，我将DIY一个。
-操作步骤前期准备
-TF（microSD）32G 1件
-U盘 8G 1件
-支持TF卡转USB读卡器 1件
-电脑 1台
-树莓派4B（RaspBerry 4 Pi model B）1台
-
-Step01 下载及烧录 AndroidTV 镜像文件镜像下载地址：https://konstak...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/08/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/02/19</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="AndroidTV">AndroidTV</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/0x0003-%E5%A5%BD%E5%AD%A6%E7%94%9F%E8%85%BE%E8%AE%AF%E8%AF%BE%E5%A0%82%E6%8C%82%E6%9C%BA%E8%84%9A%E6%9C%AC/">
-                
-                <span class="abstract-title-text">0x0003-&#34;好学生&#34;腾讯课堂挂机脚本</span>
-            </a>
-            <div class="abstract-content">
-                前言Hello，各位！相信大家在这个漫长的“寒假”里在家上网课，已经对腾讯课堂的“签到”和“答题”不陌生了。我们班，都是雷锋同志在群里吼一嗓子，大家才急急忙忙起来签到的（确信）。虽然可能以后上网课的机会很难得了，但在这里我还是将脚本代码放出来，万一以后会用到呢，分享给大家。
-原理很简单，每隔一段时间扫描下文档流，看看有没有出现弹窗，如果有就点击一下，没有就跳过。对于答题，就是随机选择一个答案。这是一个非常简易，但又非常有用的脚本，毕竟翘课一时爽，一直翘课一直爽。
-使用方法
-作者：Hooy；版本：1.0；日期：2020-08-10
-
-打开 Google Chrome 浏览器，按键盘上的 F...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/08/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/08/10</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/0x0002-%E5%8F%98%E6%9B%B4DNF%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84IP%E5%9C%B0%E5%9D%80/">
-                
-                <span class="abstract-title-text">0x0002-变更DNF服务器的IP地址</span>
-            </a>
-            <div class="abstract-content">
-                操作步骤Step01 替换服务地址在 “游戏服务根目录” 下执行命令，将地址替换。
-12345# 注释：sed -i &quot;s/旧IP地址/新IP地址/g&quot; `find . -type f -name &quot;*.cfg&quot;`# 例如：sed -i &quot;s/192.168.200.131/192.168.100.31/g&quot; `find . -type f -name &quot;*.cfg&quot;`
-执行完毕，可打开任意  .cfg 文件查看替换情况。成功替换则继续。
-
-参考：【极简操作】VM版本DNF单机+开服架设教学 百度贴吧最终版
-...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/08/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/04</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="DNF">DNF</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="IO">IO</a>
     
 </div>
 
