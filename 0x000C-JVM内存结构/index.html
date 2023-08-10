@@ -19,23 +19,27 @@
         <meta name="keywords" content="hexo,hooy,hooyantsing">
     
     <meta name="description" content="">
-    <meta name="description" content="结论先说结论，如果你的电脑出现以下症状：  开机一分钟左右硬盘占用率100%，鼠标拖动缓慢甚至无法移动。 Win10蓝屏，并且恢复进度始终为零，只能强制重启电脑。包括但不限于以下蓝屏代码： critical process died system service expection critical service failed    解决方案很可能是由硬盘掉盘引起的故障，有以下两种方案可选：">
+    <meta name="description" content="面试回答 JVM 内存结构主要分 5 块，线程隔离的有程序计数器、虚拟机栈和本地方法栈，线程共享的有方法区和堆。 程序计数器用于记录程序当前执行的位置；虚拟机栈用于保存方法间调用关系；本地方法栈用于保存本地方法调用关系，与虚拟机栈类似；方法区用于存放类信息、字段信息、方法信息、常量、静态变量、即时编译器编译后的代码缓存等数据；堆用于存放对象实例。  问题详解JVM 内存结构  程序计数器：程序计数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="0x0008-由硬盘掉盘引起的Win10蓝屏故障">
-<meta property="og:url" content="https://hooyantsing.github.io/0x0008-%E7%94%B1%E7%A1%AC%E7%9B%98%E6%8E%89%E7%9B%98%E5%BC%95%E5%8F%91%E7%9A%84Win10%E8%93%9D%E5%B1%8F%E6%95%85%E9%9A%9C/">
+<meta property="og:title" content="0x000C-JVM内存结构">
+<meta property="og:url" content="https://hooyantsing.github.io/0x000C-JVM%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/">
 <meta property="og:site_name" content="hooyantsing&#39;s Blog">
-<meta property="og:description" content="结论先说结论，如果你的电脑出现以下症状：  开机一分钟左右硬盘占用率100%，鼠标拖动缓慢甚至无法移动。 Win10蓝屏，并且恢复进度始终为零，只能强制重启电脑。包括但不限于以下蓝屏代码： critical process died system service expection critical service failed    解决方案很可能是由硬盘掉盘引起的故障，有以下两种方案可选：">
+<meta property="og:description" content="面试回答 JVM 内存结构主要分 5 块，线程隔离的有程序计数器、虚拟机栈和本地方法栈，线程共享的有方法区和堆。 程序计数器用于记录程序当前执行的位置；虚拟机栈用于保存方法间调用关系；本地方法栈用于保存本地方法调用关系，与虚拟机栈类似；方法区用于存放类信息、字段信息、方法信息、常量、静态变量、即时编译器编译后的代码缓存等数据；堆用于存放对象实例。  问题详解JVM 内存结构  程序计数器：程序计数">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-06-04T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-08-09T07:04:11.316Z">
+<meta property="og:image" content="https://hooyantsing.github.io/images/0x000C/JVM%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="https://hooyantsing.github.io/images/0x000C/%E6%A0%88%E5%B8%A7%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="https://hooyantsing.github.io/images/0x000C/%E5%A0%86%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.png">
+<meta property="article:published_time" content="2023-08-09T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-08-10T09:14:24.269Z">
 <meta property="article:author" content="hooy">
-<meta property="article:tag" content="Windows10">
+<meta property="article:tag" content="JVM">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hooyantsing.github.io/images/0x000C/JVM%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.png">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="icon" href="/assets/favicon.ico">
     
-    <title>0x0008-由硬盘掉盘引起的Win10蓝屏故障 · hooyantsing&#39;s Blog</title>
+    <title>0x000C-JVM内存结构 · hooyantsing&#39;s Blog</title>
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -260,7 +264,7 @@
                 <a href="/">hooyantsing&#39;s Blog</a>
             </div>
             <div class="post-title header-element">
-                <a href="#" class="post-name">0x0008-由硬盘掉盘引起的Win10蓝屏故障</a>
+                <a href="#" class="post-name">0x000C-JVM内存结构</a>
             </div>
         </div>
     
@@ -300,13 +304,13 @@
     <!-- 404页  -->
     
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/images/header/0x0008.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-                0x0008-由硬盘掉盘引起的Win10蓝屏故障
+                0x000C-JVM内存结构
             <!-- 404 -->
             
         </h1>
@@ -326,7 +330,7 @@
                     <div class= post-intro-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="Windows10">Windows10</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="JVM">JVM</a>
     
 </div>
 
@@ -336,7 +340,7 @@
                 <div class="post-intro-meta">
                     <!-- 撰写日期 -->
                     <span class="iconfont-archer post-intro-calander">&#xe676;</span>
-                    <span class="post-intro-time">2021/06/05</span>
+                    <span class="post-intro-time">2023/08/10</span>
                     <!-- busuanzi -->
                     
                         <span id="busuanzi_container_page_pv" class="busuanzi-pv">
@@ -491,24 +495,33 @@
             <div class="container container-unloaded">
                 <main class="main post-page">
     <article class="article-entry">
-        <h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>先说结论，如果你的电脑出现以下症状：</p>
-<ol>
-<li>开机一分钟左右硬盘占用率100%，鼠标拖动缓慢甚至无法移动。</li>
-<li>Win10蓝屏，并且恢复进度始终为零，只能强制重启电脑。包括但不限于以下蓝屏代码：<ul>
-<li>critical process died</li>
-<li>system service expection</li>
-<li>critical service failed</li>
+        <h2 id="面试回答"><a href="#面试回答" class="headerlink" title="面试回答"></a>面试回答</h2><blockquote>
+<p>JVM 内存结构主要分 5 块，线程隔离的有程序计数器、虚拟机栈和本地方法栈，线程共享的有方法区和堆。</p>
+<p>程序计数器用于记录程序当前执行的位置；虚拟机栈用于保存方法间调用关系；本地方法栈用于保存本地方法调用关系，与虚拟机栈类似；方法区用于存放类信息、字段信息、方法信息、常量、静态变量、即时编译器编译后的代码缓存等数据；堆用于存放对象实例。</p>
+</blockquote>
+<h2 id="问题详解"><a href="#问题详解" class="headerlink" title="问题详解"></a>问题详解</h2><h3 id="JVM-内存结构"><a href="#JVM-内存结构" class="headerlink" title="JVM 内存结构"></a>JVM 内存结构</h3><p><img src="/../images/0x000C/JVM%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.png" alt="JVM内存结构"></p>
+<ul>
+<li>程序计数器：程序计数器是一块较小的内存空间，它的作用可以看作是当前线程所执行的字节码的行号指示器，程序计数器记录着某个线程当前执行指令的位置；</li>
+<li>虚拟机栈：每调用一个方法都会生成一个新的栈帧，调用方法的过程就是一个压栈和出栈的过程，遵循先进后出的原则；</li>
+<li>本地方法栈：由于java需要与一些底层系统如操作系统或某些硬件交换信息时的情况，这个时候就需要通过调用native本地方法来实现，本地方法栈和虚拟机栈功能差不多，区别在于本地方法栈是虚拟机调用native方法时使用的。<strong>在 HotSpot 虚拟机中和虚拟机栈合二为一</strong>；</li>
+<li>方法区：JVM方法区是用于保存已经被虚拟机加载的类元信息（包括类的版本、字段、方法、接口和父类等信息）、运行时常量信息（static、final定义的常量）、字符串常量信息（String a&#x3D;”dfc”）。<strong>Java8 版本 Hotspot 虚拟机实现名元数据（MetaSpace）</strong>；</li>
+<li>堆：堆内存主要是用来存放创建的对象数据。</li>
 </ul>
-</li>
-</ol>
-<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>很可能是由硬盘掉盘引起的故障，有以下两种方案可选：</p>
-<ol>
-<li>将硬盘拆下，使用酒精擦拭硬盘“金手指”，然后装回去（可以考虑换一个插槽）。</li>
-<li>直接更换硬盘。</li>
-</ol>
-<h3 id="我的经历"><a href="#我的经历" class="headerlink" title="我的经历"></a>我的经历</h3><p>最近一段时间，我的笔记本蓝屏是越来越频繁，令人恼火。根据蓝屏代码查询相关资料，也没一个靠谱的，通常都是什么杀毒、重装系统云云，基本上没什么实质性帮助。</p>
-<p>经过我的观察，在电脑蓝屏前，固态硬盘占用率经常飙至100%，不一会就蓝屏。后来，又一次蓝屏后，进入BIOS发现安装系统的固态硬盘无法识别，我恍然大悟，原来是硬盘掉盘了。</p>
-<p>废话不多说，打开电脑后盖，将固态硬盘取下来，用蘸了酒精的棉签擦了擦金手指，又装到另一个插槽上。截至写稿，蓝屏不再复现，故障完美解决。</p>
+<h4 id="虚拟机栈的栈帧内存结构"><a href="#虚拟机栈的栈帧内存结构" class="headerlink" title="虚拟机栈的栈帧内存结构"></a>虚拟机栈的栈帧内存结构</h4><p><img src="/../images/0x000C/%E6%A0%88%E5%B8%A7%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.png" alt="栈帧内存结构"></p>
+<ul>
+<li>局部变量表：保存着变量的数据；</li>
+<li>操作数栈：进行运算时存放数据的空间；</li>
+<li>动态连接：指向常量池的引用；</li>
+<li>方法返回地址：当前方法返回后的数据存放的地方。</li>
+</ul>
+<h4 id="堆内存结构"><a href="#堆内存结构" class="headerlink" title="堆内存结构"></a>堆内存结构</h4><blockquote>
+<p>Java8</p>
+</blockquote>
+<p><img src="/../images/0x000C/%E5%A0%86%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.png" alt="堆内存结构"></p>
+<h2 id="参考阅读"><a href="#参考阅读" class="headerlink" title="参考阅读"></a>参考阅读</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/111370230">JVM基础（二）JVM的内存分区</a></li>
+<li><a target="_blank" rel="noopener" href="https://javaguide.cn/java/jvm/memory-area.html">Java内存区域详解（重点）</a></li>
+</ul>
 
     </article>
     <!-- license -->
@@ -518,16 +531,16 @@
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href="/0x0009-ApacheDoris%E5%9F%8E%E5%B8%82%E8%A1%8C-%E6%9D%AD%E5%B7%9E%E7%AB%99/" title="0x0009-ApacheDoris城市行-杭州站">
-                    <div class="nextTitle">0x0009-ApacheDoris城市行-杭州站</div>
+                <a href="/0x000B-BIO%E3%80%81NIO%E3%80%81AIO%E5%8C%BA%E5%88%AB%E7%9A%84%E5%8C%BA%E5%88%AB/" title="0x000B-BIO、NIO、AIO区别的区别">
+                    <div class="nextTitle">0x000B-BIO、NIO、AIO区别的区别</div>
                 </a>
             
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/0x0007-%E5%8F%88%E5%88%B0%E4%B8%80%E5%B9%B4%E6%AF%95%E4%B8%9A%E5%AD%A3/" title="0x0007-又到一年毕业季">
-                    <div class="prevTitle">0x0007-又到一年毕业季</div>
+                <a href="/0x000A-%E5%9C%A8%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E6%97%B6%EF%BC%8C%E5%9C%A8%E9%9C%80%E8%A6%81%E5%8A%A0%E9%94%81%E6%97%B6%EF%BC%8C%E4%B8%8D%E5%8A%A0%E9%94%81%E4%BC%9A%E6%9C%89%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98/" title="0x000A-在并发编程时，在需要加锁时，不加锁会有什么问题">
+                    <div class="prevTitle">0x000A-在并发编程时，在需要加锁时，不加锁会有什么问题</div>
                 </a>
             
         </li>
@@ -674,7 +687,7 @@
                 <div class="toc-catalog">
                     <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
                 </div>
-                <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-number">1.</span> <span class="toc-text">结论</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.1.</span> <span class="toc-text">解决方案</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E7%9A%84%E7%BB%8F%E5%8E%86"><span class="toc-number">2.</span> <span class="toc-text">我的经历</span></a></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E5%9B%9E%E7%AD%94"><span class="toc-number">1.</span> <span class="toc-text">面试回答</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E8%AF%A6%E8%A7%A3"><span class="toc-number">2.</span> <span class="toc-text">问题详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JVM-%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84"><span class="toc-number">2.1.</span> <span class="toc-text">JVM 内存结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88%E7%9A%84%E6%A0%88%E5%B8%A7%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84"><span class="toc-number">2.1.1.</span> <span class="toc-text">虚拟机栈的栈帧内存结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A0%86%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84"><span class="toc-number">2.1.2.</span> <span class="toc-text">堆内存结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%98%85%E8%AF%BB"><span class="toc-number">3.</span> <span class="toc-text">参考阅读</span></a></li></ol>
             </div>
         
         <!-- sidebar -->
