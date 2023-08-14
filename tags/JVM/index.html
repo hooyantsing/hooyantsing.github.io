@@ -437,12 +437,12 @@
             <div class="abstract-content">
                 面试回答
 JVM 内存结构主要分 5 块，线程隔离的有程序计数器、虚拟机栈和本地方法栈，线程共享的有方法区和堆。
-程序计数器用于记录程序当前执行的位置；虚拟机栈用于保存方法间调用关系；本地方法栈用于保存本地方法调用关系，与虚拟机栈类似；方法区用于存放类信息、字段信息、方法信息、常量、静态变量、即时编译器编译后的代码缓存等数据；堆用于存放对象实例。
+程序计数器用于记录程序当前执行的位置；虚拟机栈用于保存方法调用关系；本地方法栈用于保存本地方法调用关系，与虚拟机栈类似；方法区用于存放类信息、字段信息、方法信息、常量、静态变量、即时编译器编译后的代码缓存等数据；堆用于存放对象实例。
 
 问题详解JVM 内存结构
 
 程序计数器：程序计数器是一块较小的内存空间，它的作用可以看作是当前线程所执行的字节码的行号指示器，程序计数器记录着某个线程当前执行指令的位置；
-虚拟机栈：每调用一个方法都会生成一个新的栈帧，调用方法的过程就是一个压...
+虚拟机栈：每调用一个方法都会生成一个新的栈帧，调用方法的过程就是一个压栈...
             </div>
             <!-- read more -->
             
@@ -630,7 +630,20 @@ JVM 内存结构主要分 5 块，线程隔离的有程序计数器、虚拟机�
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -689,7 +702,7 @@ JVM 内存结构主要分 5 块，线程隔离的有程序计数器、虚拟机�
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 11
+        Total : 12
         </div>
         <!-- search  -->
         
@@ -705,6 +718,12 @@ JVM 内存结构主要分 5 块，线程隔离的有程序计数器、虚拟机�
             
         
         <li class="archive-post-item">
+            <span class="archive-post-date">08/05</span>
+            <a class="archive-post-title" href="/0x000E-%E4%BA%86%E8%A7%A3SpringMVC%E7%9A%84%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B%E5%90%97/">0x000E-了解SpringMVC的处理流程吗.md</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
             <span class="archive-post-date">08/04</span>
             <a class="archive-post-title" href="/0x000D-%E6%8F%AD%E7%A7%98NPK%E6%96%87%E4%BB%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">0x000D-揭秘NPK文件数据结构</a>
         </li>
@@ -718,13 +737,13 @@ JVM 内存结构主要分 5 块，线程隔离的有程序计数器、虚拟机�
         
         <li class="archive-post-item">
             <span class="archive-post-date">08/02</span>
-            <a class="archive-post-title" href="/0x000B-BIO%E3%80%81NIO%E3%80%81AIO%E5%8C%BA%E5%88%AB%E7%9A%84%E5%8C%BA%E5%88%AB/">0x000B-BIO、NIO、AIO区别的区别</a>
+            <a class="archive-post-title" href="/0x000B-BIO%E3%80%81NIO%E3%80%81AIO%E7%9A%84%E5%8C%BA%E5%88%AB/">0x000B-BIO、NIO、AIO的区别</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">08/01</span>
-            <a class="archive-post-title" href="/0x000A-%E5%9C%A8%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E6%97%B6%EF%BC%8C%E5%9C%A8%E9%9C%80%E8%A6%81%E5%8A%A0%E9%94%81%E6%97%B6%EF%BC%8C%E4%B8%8D%E5%8A%A0%E9%94%81%E4%BC%9A%E6%9C%89%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98/">0x000A-在并发编程时，在需要加锁时，不加锁会有什么问题</a>
+            <a class="archive-post-title" href="/0x000A-Java%20%E4%B8%AD%E7%9A%84%E9%94%81%E6%A6%82%E5%BF%B5/">0x000A-Java 中的锁概念</a>
         </li>
     
         
@@ -793,24 +812,14 @@ JVM 内存结构主要分 5 块，线程隔离的有程序计数器、虚拟机�
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
         
-            <span class="sidebar-tag-name" data-tags="DNF">
+            <span class="sidebar-tag-name" data-tags="Windows10">
                 <span class="iconfont-archer">&#xe606;</span>
-                DNF
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="AndroidTV">
-                <span class="iconfont-archer">&#xe606;</span>
-                AndroidTV
+                Windows10
             </span>
         
             <span class="sidebar-tag-name" data-tags="Doris">
                 <span class="iconfont-archer">&#xe606;</span>
                 Doris
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="Windows10">
-                <span class="iconfont-archer">&#xe606;</span>
-                Windows10
             </span>
         
             <span class="sidebar-tag-name" data-tags="JUC">
@@ -823,9 +832,24 @@ JVM 内存结构主要分 5 块，线程隔离的有程序计数器、虚拟机�
                 IO
             </span>
         
+            <span class="sidebar-tag-name" data-tags="DNF">
+                <span class="iconfont-archer">&#xe606;</span>
+                DNF
+            </span>
+        
             <span class="sidebar-tag-name" data-tags="JVM">
                 <span class="iconfont-archer">&#xe606;</span>
                 JVM
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="SpringWeb">
+                <span class="iconfont-archer">&#xe606;</span>
+                SpringWeb
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="AndroidTV">
+                <span class="iconfont-archer">&#xe606;</span>
+                AndroidTV
             </span>
         
     </div>
@@ -839,14 +863,14 @@ JVM 内存结构主要分 5 块，线程隔离的有程序计数器、虚拟机�
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="生活志">
-            <span class="iconfont-archer">&#xe60a;</span>
-            生活志
-        </span>
-    
         <span class="sidebar-category-name" data-categories="技术向">
             <span class="iconfont-archer">&#xe60a;</span>
             技术向
+        </span>
+    
+        <span class="sidebar-category-name" data-categories="生活志">
+            <span class="iconfont-archer">&#xe60a;</span>
+            生活志
         </span>
     
         <span class="sidebar-category-name" data-categories="面试经">
