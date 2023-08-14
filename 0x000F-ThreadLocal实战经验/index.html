@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://hooyantsing.github.io/images/0x000F/640.jpeg">
 <meta property="og:image" content="https://hooyantsing.github.io/images/0x000F/641.jpeg">
 <meta property="article:published_time" content="2023-08-05T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-08-14T09:43:38.765Z">
+<meta property="article:modified_time" content="2023-08-14T09:55:47.810Z">
 <meta property="article:author" content="hooy">
 <meta property="article:tag" content="JUC">
 <meta name="twitter:card" content="summary">
@@ -499,23 +499,23 @@
 <p>ThreadLocalMap 是由 <strong>数组</strong> 实现。</p>
 <h3 id="ThreadLocalMap-如何解决哈希冲突"><a href="#ThreadLocalMap-如何解决哈希冲突" class="headerlink" title="ThreadLocalMap 如何解决哈希冲突"></a>ThreadLocalMap 如何解决哈希冲突</h3><p><img src="/../images/0x000F/641.jpeg" alt="641"></p>
 <p>解决哈希冲突：<strong>开放定址法</strong>。</p>
-<h3 id="新思路"><a href="#新思路" class="headerlink" title="新思路"></a>新思路</h3><h4 id="使线程不安全的资源对象线程安全"><a href="#使线程不安全的资源对象线程安全" class="headerlink" title="使线程不安全的资源对象线程安全"></a>使线程不安全的资源对象线程安全</h4><blockquote>
-<ol>
+<h3 id="新思路"><a href="#新思路" class="headerlink" title="新思路"></a>新思路</h3><h4 id="使线程不安全的资源对象线程安全"><a href="#使线程不安全的资源对象线程安全" class="headerlink" title="使线程不安全的资源对象线程安全"></a>使线程不安全的资源对象线程安全</h4><ul>
 <li><p>为每一个对象分配一个线程不安全对象，但会生成大量重复资源对象；</p>
 </li>
 <li><p>用锁保证某一时刻仅有一个线程可对线程不安全对象操作，但锁会影响性能。</p>
 </li>
-</ol>
-</blockquote>
+</ul>
 <p>为每个线程创建一个独享的线程不安全的资源对象，那资源对象就是线程安全的了。</p>
-<h4 id="方法形参传递"><a href="#方法形参传递" class="headerlink" title="方法形参传递"></a>方法形参传递</h4><blockquote>
-<p> 通常是为方法形参列表追加参数的形式扩张传递参数，但涉及第三方依赖时不可更改参数。</p>
-</blockquote>
+<h4 id="方法形参传递"><a href="#方法形参传递" class="headerlink" title="方法形参传递"></a>方法形参传递</h4><ul>
+<li>通常是为方法形参列表追加参数的形式扩张传递参数，但涉及第三方依赖时不可更改参数。</li>
+</ul>
 <p>将参数 set 到 ThreadLocal 里可以避免重写被调用方法的形参列表，传递到使用位置再 get 出来。</p>
-<h4 id="父子线程参数传递"><a href="#父子线程参数传递" class="headerlink" title="父子线程参数传递"></a>父子线程参数传递</h4><blockquote>
-<p>通常是实现一个 Thread 子类，用构造器传参的方式传递父线程参数。</p>
-</blockquote>
+<h4 id="父子线程参数传递"><a href="#父子线程参数传递" class="headerlink" title="父子线程参数传递"></a>父子线程参数传递</h4><ul>
+<li>通常是实现一个 Thread 子类，用构造器传参的方式传递父线程参数。</li>
+</ul>
 <p>通过 ThreadLocal 子类 <strong>InheritableThreadLocal</strong> 共享线程数据。</p>
+<h3 id="在开源框架的应用"><a href="#在开源框架的应用" class="headerlink" title="在开源框架的应用"></a>在开源框架的应用</h3><h4 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h4><p>Spring采用 Threadlocal 的方式，来保证单个线程中的数据库操作使用的是同一个数据库连接，同时，采用这种方式可以使业务层使用事务时不需要感知并管理 connection 对象，通过传播级别，巧妙地管理多个事务配置之间的切换，挂起和恢复。</p>
+<p>主要是在 <code>TransactionSynchronizationManager</code> 这个类里面。Spring的事务主要是 <strong>ThreadLocal</strong> 和 <strong>AOP</strong> 去做实现的。</p>
 <h2 id="参考阅读"><a href="#参考阅读" class="headerlink" title="参考阅读"></a>参考阅读</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/LzkZXPtLW2dqPoz3kh3pBQ">Java面试必问：ThreadLocal终极篇 淦！</a></li>
 </ul>
@@ -679,7 +679,7 @@
                 <div class="toc-catalog">
                     <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
                 </div>
-                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E8%AF%A6%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">问题详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ThreadLocalMap-%E5%BA%95%E5%B1%82%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text">ThreadLocalMap 底层结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ThreadLocalMap-%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E5%93%88%E5%B8%8C%E5%86%B2%E7%AA%81"><span class="toc-number">1.2.</span> <span class="toc-text">ThreadLocalMap 如何解决哈希冲突</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E6%80%9D%E8%B7%AF"><span class="toc-number">1.3.</span> <span class="toc-text">新思路</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%BA%BF%E7%A8%8B%E4%B8%8D%E5%AE%89%E5%85%A8%E7%9A%84%E8%B5%84%E6%BA%90%E5%AF%B9%E8%B1%A1%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8"><span class="toc-number">1.3.1.</span> <span class="toc-text">使线程不安全的资源对象线程安全</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E5%BD%A2%E5%8F%82%E4%BC%A0%E9%80%92"><span class="toc-number">1.3.2.</span> <span class="toc-text">方法形参传递</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%88%B6%E5%AD%90%E7%BA%BF%E7%A8%8B%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92"><span class="toc-number">1.3.3.</span> <span class="toc-text">父子线程参数传递</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%98%85%E8%AF%BB"><span class="toc-number">2.</span> <span class="toc-text">参考阅读</span></a></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E8%AF%A6%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">问题详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ThreadLocalMap-%E5%BA%95%E5%B1%82%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text">ThreadLocalMap 底层结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ThreadLocalMap-%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E5%93%88%E5%B8%8C%E5%86%B2%E7%AA%81"><span class="toc-number">1.2.</span> <span class="toc-text">ThreadLocalMap 如何解决哈希冲突</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E6%80%9D%E8%B7%AF"><span class="toc-number">1.3.</span> <span class="toc-text">新思路</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%BA%BF%E7%A8%8B%E4%B8%8D%E5%AE%89%E5%85%A8%E7%9A%84%E8%B5%84%E6%BA%90%E5%AF%B9%E8%B1%A1%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8"><span class="toc-number">1.3.1.</span> <span class="toc-text">使线程不安全的资源对象线程安全</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E5%BD%A2%E5%8F%82%E4%BC%A0%E9%80%92"><span class="toc-number">1.3.2.</span> <span class="toc-text">方法形参传递</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%88%B6%E5%AD%90%E7%BA%BF%E7%A8%8B%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92"><span class="toc-number">1.3.3.</span> <span class="toc-text">父子线程参数传递</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">1.4.</span> <span class="toc-text">在开源框架的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Spring"><span class="toc-number">1.4.1.</span> <span class="toc-text">Spring</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%98%85%E8%AF%BB"><span class="toc-number">2.</span> <span class="toc-text">参考阅读</span></a></li></ol>
             </div>
         
         <!-- sidebar -->
@@ -759,6 +759,42 @@
         
         
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -922,16 +958,6 @@
                 DNF
             </span>
         
-            <span class="sidebar-tag-name" data-tags="Windows10">
-                <span class="iconfont-archer">&#xe606;</span>
-                Windows10
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="Doris">
-                <span class="iconfont-archer">&#xe606;</span>
-                Doris
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="JUC">
                 <span class="iconfont-archer">&#xe606;</span>
                 JUC
@@ -942,14 +968,24 @@
                 IO
             </span>
         
-            <span class="sidebar-tag-name" data-tags="JVM">
+            <span class="sidebar-tag-name" data-tags="Windows10">
                 <span class="iconfont-archer">&#xe606;</span>
-                JVM
+                Windows10
             </span>
         
             <span class="sidebar-tag-name" data-tags="SpringWeb">
                 <span class="iconfont-archer">&#xe606;</span>
                 SpringWeb
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Doris">
+                <span class="iconfont-archer">&#xe606;</span>
+                Doris
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="JVM">
+                <span class="iconfont-archer">&#xe606;</span>
+                JVM
             </span>
         
             <span class="sidebar-tag-name" data-tags="AndroidTV">
