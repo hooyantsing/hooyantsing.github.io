@@ -19,20 +19,28 @@
         <meta name="keywords" content="hexo,hooy,hooyantsing">
     
     <meta name="description" content="">
-    <meta property="og:type" content="website">
-<meta property="og:title" content="hooyantsing&#39;s Blog">
-<meta property="og:url" content="https://hooyantsing.github.io/archives/2021/">
+    <meta name="description" content="从杭州回来后，为解决日益增长的服务实例需求，耗费 5 天时间，将局域网服务彻彻底底的重构了一遍。 现局域网涉及以下设备：联通光猫、HS8145V5-华为路由器、3215U-软路由工控机 和 DS218j-群晖NAS。  3215U-软路由工控机工控机安装 EXSi 7(vSphere) 操作系统，EXSi 是 VMware 公司开发的一款承载虚拟机的操作系统级产品，和 VMware 公司开发的另一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="0x00010-重构局域网服务">
+<meta property="og:url" content="https://hooyantsing.github.io/0x0010-%E9%87%8D%E6%9E%84%E5%B1%80%E5%9F%9F%E7%BD%91%E6%9C%8D%E5%8A%A1/">
 <meta property="og:site_name" content="hooyantsing&#39;s Blog">
+<meta property="og:description" content="从杭州回来后，为解决日益增长的服务实例需求，耗费 5 天时间，将局域网服务彻彻底底的重构了一遍。 现局域网涉及以下设备：联通光猫、HS8145V5-华为路由器、3215U-软路由工控机 和 DS218j-群晖NAS。  3215U-软路由工控机工控机安装 EXSi 7(vSphere) 操作系统，EXSi 是 VMware 公司开发的一款承载虚拟机的操作系统级产品，和 VMware 公司开发的另一">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://hooyantsing.github.io/images/0x0010/image-20230912103906629.png">
+<meta property="og:image" content="https://hooyantsing.github.io/images/0x0010/B066839B-F3C9-4060-8278-68604C5B277E.png">
+<meta property="og:image" content="https://hooyantsing.github.io/images/0x0010/image-20230912112836970.png">
+<meta property="article:published_time" content="2023-09-11T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-09-12T03:41:12.710Z">
 <meta property="article:author" content="hooy">
 <meta property="article:tag" content="hooy">
 <meta property="article:tag" content="hooyantsing">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hooyantsing.github.io/images/0x0010/image-20230912103906629.png">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="icon" href="/assets/favicon.ico">
     
-    <title>hooyantsing&#39;s Blog</title>
+    <title>0x00010-重构局域网服务 · hooyantsing&#39;s Blog</title>
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -219,6 +227,8 @@
         }
     </script>
     
+        <body class="post-body">
+    
         <!-- header -->
         <header class="header header-mobile">
     <!-- top read progress line -->
@@ -248,6 +258,17 @@
     </div>
     <!-- toggle banner for post layout -->
     
+        
+            <div class="banner">
+        
+            <div class="blog-title header-element">
+                <a href="/">hooyantsing&#39;s Blog</a>
+            </div>
+            <div class="post-title header-element">
+                <a href="#" class="post-name">0x00010-重构局域网服务</a>
+            </div>
+        </div>
+    
 </header>
 
         <!-- fixed footer -->
@@ -274,24 +295,74 @@
 
 
 
+    height:50vh;
+
 ">
     
     <!-- 主页  -->
     
+        
+    <!-- 404页  -->
+    
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+                0x00010-重构局域网服务
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+                
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页 meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+    
+</div>
+
+                
+                <!-- 文章字数统计 -->
+                
+                <div class="post-intro-meta">
+                    <!-- 撰写日期 -->
+                    <span class="iconfont-archer post-intro-calander">&#xe676;</span>
+                    <span class="post-intro-time">2023/09/12</span>
+                    <!-- busuanzi -->
+                    
+                        <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                            <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    
+                    <!-- 文章分享 -->
+                    <span class="share-wrapper">
+                        <span class="iconfont-archer share-icon">&#xe71d;</span>
+                        <span class="share-text">Share</span>
+                        <ul class="share-list">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -421,135 +492,85 @@
 
             <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
             <div class="container container-unloaded">
-                <main class="main index-page">
+                <main class="main post-page">
+    <article class="article-entry">
+        <p>从杭州回来后，为解决日益增长的服务实例需求，耗费 5 天时间，将局域网服务彻彻底底的重构了一遍。</p>
+<p>现局域网涉及以下设备：<strong>联通光猫、HS8145V5-华为路由器、3215U-软路由工控机 和 DS218j-群晖NAS</strong>。</p>
+<p><img src="/../images/0x0010/image-20230912103906629.png" alt="image-20230912103906629"></p>
+<h3 id="3215U-软路由工控机"><a href="#3215U-软路由工控机" class="headerlink" title="3215U-软路由工控机"></a>3215U-软路由工控机</h3><p>工控机安装 <a target="_blank" rel="noopener" href="https://www.vmware.com/cn/products/vsphere.html">EXSi 7(vSphere)</a> 操作系统，EXSi 是 VMware 公司开发的一款承载虚拟机的操作系统级产品，和 VMware 公司开发的另一款桌面应用级产品 <a target="_blank" rel="noopener" href="https://www.vmware.com/cn/products/workstation-pro.html">Workstation</a> 完美兼容，能够将 Workstation 打包的 VOF 格式文件轻松地上传至服务器并运行在 EXSi 当中。</p>
+<p>下载 EXSi 镜像文件，通过 <a target="_blank" rel="noopener" href="http://rufus.ie/downloads">Rufus</a> 写盘工具把镜像写入 U 盘（&gt; 8 GB），插入工控机 BIOS 启动，调整 U 盘作为 ROM 第一启动顺序，进入安装步骤。经过一系列密码、静态IP和管理网卡设置，EXSi 安装好了，使用浏览器访问 Web 控制面板。</p>
+<p>为了给虚拟机创造联网条件，需要进一步设置虚拟网卡&#x2F;交换机，如下：</p>
+<p><img src="/../images/0x0010/B066839B-F3C9-4060-8278-68604C5B277E.png" alt="B066839B-F3C9-4060-8278-68604C5B277E"></p>
+<ul>
+<li>VM Network：虚拟操作系统共享交换机；</li>
+<li>Lan：包括lan1、lan2、lan3和lan4，每一个 lan 对应一个物理网卡，共同接入 OpenWRT ，使其在逻辑层面互通模拟交换机；</li>
+<li>Management Network：EXSi Web 控制面板。</li>
+</ul>
+<h4 id="OpenWRT"><a href="#OpenWRT" class="headerlink" title="OpenWRT"></a>OpenWRT</h4><p>购买工控机最主要的诉求还是软路由，这就不得不使用最热门的软路由操作系统项目 <a target="_blank" rel="noopener" href="https://github.com/openwrt/openwrt">OpenWRT</a>。方便编译，我采用国内最热门的 <a target="_blank" rel="noopener" href="https://github.com/coolsnowwolf/lede">LEDE</a> 项目（OpenWRT 重要分支）构建镜像。</p>
+<p>进入编译面板，自定义编译组件，我选择以下组件：<strong>DDNS、SoftetherVPN 和 OpenClash</strong>。DDNS 用于动态域名解析，向阿里云报告当前局域网对外暴露的公网 IP 地址；SoftetherVPN 通过 VPN 的方式从公网环境访问内网，进而访问局域网服务；最后 OpenClash，俗称科学上网，向往自由必备。</p>
+<p>选择好组件编译即可。拿到 vmdk 文件，在 Workstation 创建虚拟机，打包 VOF 格式文件，上传至 EXSi 服务器。</p>
+<h4 id="UbuntuServer"><a href="#UbuntuServer" class="headerlink" title="UbuntuServer"></a>UbuntuServer</h4><p>可惜 CentOS 停更了，只能采用 Ubuntu 发行版。主要负责 Docker 容器部署。</p>
+<p>下载 Ubuntu 官方镜像，更快的下载速度，推荐使用 <a target="_blank" rel="noopener" href="https://developer.aliyun.com/mirror">阿里云</a> 镜像（镜像更新不算及时，背靠大厂质量有保证）。拿到 iso 文件，在 Workstation 创建虚拟机，打包 VOF 格式文件，上传至 EXSi 服务器。</p>
+<p>目前 Docker 只部署了 <strong>Bitwarden</strong>，这是一款非常好用、跨平台的密码管理器，开源安全稳定，推荐。后续会部署一些个人项目。</p>
+<h4 id="WindowsServer"><a href="#WindowsServer" class="headerlink" title="WindowsServer"></a>WindowsServer</h4><p>采用 WindowsServer 2012R2，貌似这个版本使用的最多。大多 Steam 游戏专用服务器使用 Windows 系部署。</p>
+<p>下载官方镜像，更快的下载速度，推荐使用 <a target="_blank" rel="noopener" href="https://msdn.itellyou.cn/">我告诉你</a> 镜像（老站，镜像全面）。拿到 iso 文件，在 Workstation 创建虚拟机，打包 VOF 格式文件，上传至 EXSi 服务器。</p>
+<p>计划部署 <strong>Don’t Starve 和 Satisfactory</strong> 两款游戏转用服务器。</p>
+<blockquote>
+<p>如果对外提供服务，不要忘记在网关路由器上转发端口。</p>
+</blockquote>
+<h3 id="DS218j-群晖NAS"><a href="#DS218j-群晖NAS" class="headerlink" title="DS218j-群晖NAS"></a>DS218j-群晖NAS</h3><p>网络存储器的目录结构很久很久没有调整过了，过去使用赛尔号星系和星球作为命名，现在改用关键字更加直观。</p>
+<p>个人私有文件放在 &#x2F;home 目录下，公共文件放在 &#x2F; 目录下。</p>
+<img src="../images/0x0010/image-20230912112836970.png" alt="image-20230912112836970" style="zoom:50%;" />
+
+<p>SHR 磁盘阵列，双盘位等价于 RAID 1。此外，Cloud Sync 套件实现数据同步，经过加密后的文件上传至百度云盘，多一份数据安全保障。</p>
+
+    </article>
+    <!-- license -->
     
-        
-        
-        
-        
+    <!-- paginator -->
+    <ul class="post-paginator">
+        <li class="next">
             
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/0x0008-%E7%94%B1%E7%A1%AC%E7%9B%98%E6%8E%89%E7%9B%98%E5%BC%95%E5%8F%91%E7%9A%84Win10%E8%93%9D%E5%B1%8F%E6%95%85%E9%9A%9C/">
-                
-                <span class="abstract-title-text">0x0008-由硬盘掉盘引起的Win10蓝屏故障</span>
-            </a>
-            <div class="abstract-content">
-                结论先说结论，如果你的电脑出现以下症状：
-
-开机一分钟左右硬盘占用率100%，鼠标拖动缓慢甚至无法移动。
-Win10蓝屏，并且恢复进度始终为零，只能强制重启电脑。包括但不限于以下蓝屏代码：
-critical process died
-system service expection
-critical service failed
-
-
-
-解决方案很可能是由硬盘掉盘引起的故障，有以下两种方案可选：
-
-将硬盘拆下，使用酒精擦拭硬盘“金手指”，然后装回去（可以考虑换一个插槽）。
-直接更换硬盘。
-
-我的经历最近一段时间，我的笔记本蓝屏是越来越频繁，令人恼火。根据蓝屏代码查询相关资料，也没一个靠谱的...
-            </div>
-            <!-- read more -->
+        </li>
+        <li class="previous">
             
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/08/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/06/05</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Windows10">Windows10</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/0x000F-ThreadLocal%E5%AE%9E%E6%88%98%E7%BB%8F%E9%AA%8C/" title="0x000F-ThreadLocal实战经验">
+                    <div class="prevTitle">0x000F-ThreadLocal实战经验</div>
+                </a>
             
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/0x0007-%E5%8F%88%E5%88%B0%E4%B8%80%E5%B9%B4%E6%AF%95%E4%B8%9A%E5%AD%A3/">
-                
-                <span class="abstract-title-text">0x0007-又到一年毕业季</span>
-            </a>
-            <div class="abstract-content">
-                正文昨天公开答辩后，我在寝室躺了整整一天。
-很开心，在大学四年结束之际，有幸参加了院里组织的公开答辩。为准备公开答辩，最近的一周真是吃尽苦头，编写代码、撰写论文和制作演示文稿（PPT），三管齐下，忙得不可开交。
+        </li>
+    </ul>
+    <!-- comment -->
+    
+        <div class="post-comment">
+            <!-- 来必力 City 版安装代码 -->
 
-毕业设计课题是“基于SSM技术的个人博客的设计与实现”，啊没错，做的就是当前这个博客软件，工作量就不多说了，前后做了七八个月。论文也写了一个月，记得是四月二十五号，我去石家庄找女朋友玩，结果学校催得紧要交初稿，只好在女友的出租屋内撰写论文，哪儿也去不了。至于演示文稿嘛，花了一天时间就做完了，学校要求做十页就行，很轻松，在答辩前一天就搞定了。
 
-要说公开答辩紧张不紧张，还用问，去...
-            </div>
-            <!-- read more -->
             
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/08/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/25</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/0x0006-AndroidTV%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%9E%E6%88%98/">
-                
-                <span class="abstract-title-text">0x0006-AndroidTV树莓派实战</span>
-            </a>
-            <div class="abstract-content">
-                - 注意！本博文前提路由器全局科学上网，路由器全局科学上网，路由器全局科学上网 -
-前言家里之前一直使用的是歌华有线数字电视，随着互联网的快速发展，网络电视盒子进入千家万户。歌华有线作为传统的电视服务，逐渐不能满足人们对文娱节目日益提高的需求。因此，父母也提议将机顶盒换置为网络电视盒子。在这里，我将DIY一个。
-操作步骤前期准备
-TF（microSD）32G 1件
-U盘 8G 1件
-支持TF卡转USB读卡器 1件
-电脑 1台
-树莓派4B（RaspBerry 4 Pi model B）1台
 
-Step01 下载及烧录 AndroidTV 镜像文件镜像下载地址：https://konstak...
-            </div>
-            <!-- read more -->
             
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/08/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/02/19</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="AndroidTV">AndroidTV</a>
-    
-</div>
 
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
+            
+
+            <!-- utteranc评论 -->
+
+
+            <!-- partial('_partial/comment/changyan') -->
+            <!--PC版-->
+
+
+            
+            
+
+            
+
+        </div>
     
-    <!-- paginator  -->
+    <!-- timeliness note -->
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
+    
+    <!-- Mathjax -->
     
 </main>
 
@@ -647,6 +668,23 @@ Step01 下载及烧录 AndroidTV 镜像文件镜像下载地址：https://konsta
 
         </div>
         <!-- toc -->
+        
+            <div class="toc-wrapper toc-wrapper-loding" style=
+
+
+
+
+
+
+
+    top:50vh;
+
+>
+                <div class="toc-catalog">
+                    <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+                </div>
+                <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#3215U-%E8%BD%AF%E8%B7%AF%E7%94%B1%E5%B7%A5%E6%8E%A7%E6%9C%BA"><span class="toc-number">1.</span> <span class="toc-text">3215U-软路由工控机</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#OpenWRT"><span class="toc-number">1.1.</span> <span class="toc-text">OpenWRT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#UbuntuServer"><span class="toc-number">1.2.</span> <span class="toc-text">UbuntuServer</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#WindowsServer"><span class="toc-number">1.3.</span> <span class="toc-text">WindowsServer</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DS218j-%E7%BE%A4%E6%99%96NAS"><span class="toc-number">2.</span> <span class="toc-text">DS218j-群晖NAS</span></a></li></ol>
+            </div>
         
         <!-- sidebar -->
         <div class="sidebar sidebar-hide">
@@ -1046,6 +1084,8 @@ Step01 下载及烧录 AndroidTV 镜像文件镜像下载地址：https://konsta
         <!-- CNZZ -->
         
         <!-- async load share.js -->
+        
+            <script src="/scripts/share.js?v=20211217" async></script>
         
         <!-- mermaid -->
         
