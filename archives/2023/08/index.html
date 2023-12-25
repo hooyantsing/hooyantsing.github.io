@@ -524,16 +524,16 @@ Dis...
             <div class="abstract-content">
                 前言欢迎 ⭐️star 我使用 Java 开发的开源项目 npk-api，提供对《地下城与勇士》（DNF、DFO）游戏资源 NPK 文件基础操作能力。
 分析 NPK 数据结构
-魔数通常用于判断文件类型，占用 16 字节。在 NPK 文件中，固定值：NeoplePack_Bill。
+魔数通常用于判断文件类型，占用 16 字节。在 NPK 文件中，固定值：NeoplePack_Bill\0（最后一字节是 0x00）。
 IMG 数量占用 4 字节，用于描述 NPK 文件承载了多少数量的 IMG 文件。
 IMG 索引表每个 IMG 文件索引占用 264 字节，包括 4 字节地址偏移、4 字节数据长度和 256 字节加密后的 IMG 文件名。
-IMG 文件名加解密加密是将原 IMG 文件名转换为 256 字节 ASCII 码，不足...
+IMG 文件名加解密加密是将原 IMG 文件名转换为 25...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/08/11">
+                <div class="abstract-date" title="Last updated: 2023/12/22">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/08/04</span>
                 </div>
                 <!-- tags -->
@@ -856,7 +856,66 @@ JVM 内存结构主要分 5 块，线程隔离的有程序计数器、虚拟机�
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -901,7 +960,7 @@ JVM 内存结构主要分 5 块，线程隔离的有程序计数器、虚拟机�
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 14
+        Total : 15
         </div>
         <!-- search  -->
         
@@ -917,8 +976,14 @@ JVM 内存结构主要分 5 块，线程隔离的有程序计数器、虚拟机�
             
         
         <li class="archive-post-item">
+            <span class="archive-post-date">12/25</span>
+            <a class="archive-post-title" href="/0x0011-%E6%98%AF%E9%87%91%E5%AD%90%E6%80%BB%E4%BC%9A%E5%8F%91%E5%85%89/">0x0011-是金子总会发光</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
             <span class="archive-post-date">09/12</span>
-            <a class="archive-post-title" href="/0x0010-%E9%87%8D%E6%9E%84%E5%B1%80%E5%9F%9F%E7%BD%91%E6%9C%8D%E5%8A%A1/">0x00010-重构局域网服务</a>
+            <a class="archive-post-title" href="/0x0010-%E9%87%8D%E6%9E%84%E5%B1%80%E5%9F%9F%E7%BD%91%E6%9C%8D%E5%8A%A1/">0x0010-重构局域网服务</a>
         </li>
     
         
@@ -1038,11 +1103,6 @@ JVM 内存结构主要分 5 块，线程隔离的有程序计数器、虚拟机�
                 Doris
             </span>
         
-            <span class="sidebar-tag-name" data-tags="JUC">
-                <span class="iconfont-archer">&#xe606;</span>
-                JUC
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="IO">
                 <span class="iconfont-archer">&#xe606;</span>
                 IO
@@ -1051,6 +1111,11 @@ JVM 内存结构主要分 5 块，线程隔离的有程序计数器、虚拟机�
             <span class="sidebar-tag-name" data-tags="JVM">
                 <span class="iconfont-archer">&#xe606;</span>
                 JVM
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="JUC">
+                <span class="iconfont-archer">&#xe606;</span>
+                JUC
             </span>
         
             <span class="sidebar-tag-name" data-tags="SpringWeb">
@@ -1074,14 +1139,14 @@ JVM 内存结构主要分 5 块，线程隔离的有程序计数器、虚拟机�
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="生活志">
-            <span class="iconfont-archer">&#xe60a;</span>
-            生活志
-        </span>
-    
         <span class="sidebar-category-name" data-categories="技术向">
             <span class="iconfont-archer">&#xe60a;</span>
             技术向
+        </span>
+    
+        <span class="sidebar-category-name" data-categories="生活志">
+            <span class="iconfont-archer">&#xe60a;</span>
+            生活志
         </span>
     
         <span class="sidebar-category-name" data-categories="面试经">

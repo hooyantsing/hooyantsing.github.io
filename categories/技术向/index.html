@@ -430,6 +430,37 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/0x0010-%E9%87%8D%E6%9E%84%E5%B1%80%E5%9F%9F%E7%BD%91%E6%9C%8D%E5%8A%A1/">
+                
+                <span class="abstract-title-text">0x0010-重构局域网服务</span>
+            </a>
+            <div class="abstract-content">
+                从杭州回来后，为解决日益增长的服务实例需求，耗费 5 天时间，将局域网服务彻彻底底的重构了一遍。
+现局域网涉及以下设备：联通光猫、HS8145V5-华为路由器、3215U-软路由工控机 和 DS218j-群晖NAS。
+
+3215U-软路由工控机工控机安装 EXSi 7(vSphere) 操作系统，EXSi 是 VMware 公司开发的一款承载虚拟机的操作系统级产品，和 VMware 公司开发的另一款桌面应用级产品 Workstation 完美兼容，能够将 Workstation 打包的 VOF 格式文件轻松地上传至服务器并运行在 EXSi 当中。
+下载 EXSi 镜像文件，通过 Rufu...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2023/12/25">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/09/12</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/0x000D-%E6%8F%AD%E7%A7%98NPK%E6%96%87%E4%BB%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
                 
                 <span class="abstract-title-text">0x000D-揭秘NPK文件数据结构</span>
@@ -437,16 +468,16 @@
             <div class="abstract-content">
                 前言欢迎 ⭐️star 我使用 Java 开发的开源项目 npk-api，提供对《地下城与勇士》（DNF、DFO）游戏资源 NPK 文件基础操作能力。
 分析 NPK 数据结构
-魔数通常用于判断文件类型，占用 16 字节。在 NPK 文件中，固定值：NeoplePack_Bill。
+魔数通常用于判断文件类型，占用 16 字节。在 NPK 文件中，固定值：NeoplePack_Bill\0（最后一字节是 0x00）。
 IMG 数量占用 4 字节，用于描述 NPK 文件承载了多少数量的 IMG 文件。
 IMG 索引表每个 IMG 文件索引占用 264 字节，包括 4 字节地址偏移、4 字节数据长度和 256 字节加密后的 IMG 文件名。
-IMG 文件名加解密加密是将原 IMG 文件名转换为 256 字节 ASCII 码，不足...
+IMG 文件名加解密加密是将原 IMG 文件名转换为 25...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/08/11">
+                <div class="abstract-date" title="Last updated: 2023/12/22">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/08/04</span>
                 </div>
                 <!-- tags -->
@@ -809,7 +840,66 @@ Step01 下载及烧录 AndroidTV 镜像文件镜像下载地址：https://konsta
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -854,7 +944,7 @@ Step01 下载及烧录 AndroidTV 镜像文件镜像下载地址：https://konsta
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 14
+        Total : 15
         </div>
         <!-- search  -->
         
@@ -870,8 +960,14 @@ Step01 下载及烧录 AndroidTV 镜像文件镜像下载地址：https://konsta
             
         
         <li class="archive-post-item">
+            <span class="archive-post-date">12/25</span>
+            <a class="archive-post-title" href="/0x0011-%E6%98%AF%E9%87%91%E5%AD%90%E6%80%BB%E4%BC%9A%E5%8F%91%E5%85%89/">0x0011-是金子总会发光</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
             <span class="archive-post-date">09/12</span>
-            <a class="archive-post-title" href="/0x0010-%E9%87%8D%E6%9E%84%E5%B1%80%E5%9F%9F%E7%BD%91%E6%9C%8D%E5%8A%A1/">0x00010-重构局域网服务</a>
+            <a class="archive-post-title" href="/0x0010-%E9%87%8D%E6%9E%84%E5%B1%80%E5%9F%9F%E7%BD%91%E6%9C%8D%E5%8A%A1/">0x0010-重构局域网服务</a>
         </li>
     
         
@@ -991,11 +1087,6 @@ Step01 下载及烧录 AndroidTV 镜像文件镜像下载地址：https://konsta
                 Doris
             </span>
         
-            <span class="sidebar-tag-name" data-tags="JUC">
-                <span class="iconfont-archer">&#xe606;</span>
-                JUC
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="IO">
                 <span class="iconfont-archer">&#xe606;</span>
                 IO
@@ -1004,6 +1095,11 @@ Step01 下载及烧录 AndroidTV 镜像文件镜像下载地址：https://konsta
             <span class="sidebar-tag-name" data-tags="JVM">
                 <span class="iconfont-archer">&#xe606;</span>
                 JVM
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="JUC">
+                <span class="iconfont-archer">&#xe606;</span>
+                JUC
             </span>
         
             <span class="sidebar-tag-name" data-tags="SpringWeb">
@@ -1027,14 +1123,14 @@ Step01 下载及烧录 AndroidTV 镜像文件镜像下载地址：https://konsta
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="生活志">
-            <span class="iconfont-archer">&#xe60a;</span>
-            生活志
-        </span>
-    
         <span class="sidebar-category-name" data-categories="技术向">
             <span class="iconfont-archer">&#xe60a;</span>
             技术向
+        </span>
+    
+        <span class="sidebar-category-name" data-categories="生活志">
+            <span class="iconfont-archer">&#xe60a;</span>
+            生活志
         </span>
     
         <span class="sidebar-category-name" data-categories="面试经">

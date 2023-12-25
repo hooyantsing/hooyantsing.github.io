@@ -21,7 +21,7 @@
     <meta name="description" content="">
     <meta property="og:type" content="website">
 <meta property="og:title" content="hooyantsing&#39;s Blog">
-<meta property="og:url" content="https://hooyantsing.github.io/tags/JUC/">
+<meta property="og:url" content="https://hooyantsing.github.io/archives/2023/12/">
 <meta property="og:site_name" content="hooyantsing&#39;s Blog">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="hooy">
@@ -430,81 +430,32 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/0x000F-ThreadLocal%E5%AE%9E%E6%88%98%E7%BB%8F%E9%AA%8C/">
+            <a class="abstract-title" href="/0x0011-%E6%98%AF%E9%87%91%E5%AD%90%E6%80%BB%E4%BC%9A%E5%8F%91%E5%85%89/">
                 
-                <span class="abstract-title-text">0x000F-ThreadLocal实战经验</span>
+                <span class="abstract-title-text">0x0011-是金子总会发光</span>
             </a>
             <div class="abstract-content">
-                问题详解ThreadLocalMap 底层结构
-每个线程 Thread 都维护了自己的 threadLocals 变量，所以在每个线程创建 ThreadLocal 的时候，实际上数据是存在自己线程 Thread 的 threadLocals 变量里面的，别人没办法拿到，从而实现了隔离。
-ThreadLocalMap 是由 数组 实现。
-ThreadLocalMap 如何解决哈希冲突
-解决哈希冲突：开放定址法。
-新思路使线程不安全的资源对象线程安全
-为每一个对象分配一个线程不安全对象，但会生成大量重复资源对象；
+                
+长风破浪会有时，直挂云帆济沧海。
 
-用锁保证某一时刻仅有一个线程可对线程不安全对象操作，但锁会影响性能。
+今年 9 月初，我从 东信北邮 离职了，届时刚刚工作满一年半。在经济下行的当下，这是一个十分需要勇气的决定，甚至都做好了失业至少半年的心理准备，在这段时间休息、学习和求职。
+是否要从一个公司离职，主要评价以下几点，我将其称为 跳槽成本，成本越高，跳槽风险也就越高，更需要深思熟虑。
 
+工作强度是否和薪资待遇匹配，或者与同行的平均薪资比较；
+同事关系是否和谐，是否能够成为你学习的榜样；
+工作内容是否有价值，持续探索新领域保持技术热情；
+领导是否作为，公司文化和发展前景如何。
 
-为...
+从以上几点分析，前司显然不是好的归宿，我的跳槽成本无限接近于零。再见，东信北邮...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/08/15">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/08/06</span>
+                <div class="abstract-date" title="Last updated: 2023/12/25">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/25</span>
                 </div>
                 <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JUC">JUC</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/0x000A-Java%20%E4%B8%AD%E7%9A%84%E9%94%81%E6%A6%82%E5%BF%B5/">
-                
-                <span class="abstract-title-text">0x000A-Java 中的锁概念</span>
-            </a>
-            <div class="abstract-content">
-                问题详解
-悲观锁和乐观锁
-悲观锁：所以每次操作前都会上锁，其他线程阻塞。在 Java 语言中 synchronized 和 ReentrantLock 等就是典型的悲观锁，还有一些使用了 synchronized 关键字的容器类如 HashTable 等也是悲观锁的应用。适用于读少写多；
-乐观锁：乐观锁操作数据时不会上锁，在更新的时候会判断一下在此期间是否有其他线程去更新这个数据。乐观锁可以使用版本号机制和 CAS 算法实现。在 Java 语言中 java.util.concurrent.atomic 包下的原子类就是使用 CAS 乐观锁实现的。适用于读多写少。
-
-独占锁和共享锁
-独占锁...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/08/14">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/08/01</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JUC">JUC</a>
-    
-</div>
-
                 
             </div>
         </article>
